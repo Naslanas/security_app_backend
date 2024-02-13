@@ -2,6 +2,7 @@ const express=require("express")
 const cors=require("cors")
 const mongoose=require("mongoose")
 const securityRoute=require("./controllers/securityRouter")
+const visitorRoute=require("./controllers/visitorRouter")
 
 const app=express()
 
@@ -13,6 +14,7 @@ mongoose.connect("mongodb+srv://nasla:nasla1711@cluster0.f8gbros.mongodb.net/sec
 })
 
 app.use("/api/securityapp",securityRoute)
+app.use("/api/securityapp",visitorRoute)
 
 app.listen(3001,()=>{
     console.log("Server Running")
